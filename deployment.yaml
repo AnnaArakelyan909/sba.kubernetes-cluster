@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-kubernetes-service
+spec:
+  selector:
+    app: flask
+  ports:
+  - protocol: "TCP"
+    port: 6000
+    targetPort: 8080
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-kubernetes-cluster
+spec:
+  selector:
+    matchLabels:
+      app: flask
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      containers:
+      - name: sba-kubernetes-cluster
+        image: annaarakeyan/sba-kubernetes-cluster
+        ports:
+        - containerPort: 8080
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
