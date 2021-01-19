@@ -1,0 +1,284 @@
+Services
+------------------
+Name:                     flask-kubernetes-service
+Namespace:                default
+Labels:                   <none>
+Annotations:              <none>
+Selector:                 app=flask
+Type:                     LoadBalancer
+IP Families:              <none>
+IP:                       10.101.183.98
+IPs:                      <none>
+Port:                     <unset>  6000/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  31417/TCP
+Endpoints:                172.17.0.2:8080,172.17.0.3:8080,172.17.0.5:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.96.0.1
+IPs:               <none>
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         192.168.49.2:8443
+Session Affinity:  None
+Events:            <none>
+NAME                       TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+flask-kubernetes-service   LoadBalancer   10.101.183.98   <pending>     6000:31417/TCP   22h
+kubernetes                 ClusterIP      10.96.0.1       <none>        443/TCP          22h
+Pods
+------------------
+Name:         flask-kubernetes-cluster-cdc9685bf-7xd8h
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Mon, 18 Jan 2021 00:00:46 -0500
+Labels:       app=flask
+              pod-template-hash=cdc9685bf
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.3
+IPs:
+  IP:           172.17.0.3
+Controlled By:  ReplicaSet/flask-kubernetes-cluster-cdc9685bf
+Containers:
+  sba-kubernetes-cluster:
+    Container ID:  docker://412843dd4140815b37551c6ce47e6649633741999d08962f561aa8afbf1e51e8
+    Image:         annaarakeyan/sba-kubernetes-cluster
+    Image ID:      docker-pullable://annaarakeyan/sba-kubernetes-cluster@sha256:2a09cd45839c45c613971fdc4346482ebcb9284c0246b73b78f32e1cb27d7d81
+    Port:          8080/TCP
+    Host Port:     0/TCP
+    Command:
+      /bin/bash
+      -c
+      --
+    Args:
+      while true; do sleep 30; done;
+    State:          Running
+      Started:      Mon, 18 Jan 2021 00:00:54 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-8j67j (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-8j67j:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-8j67j
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:          <none>
+
+
+Name:         flask-kubernetes-cluster-cdc9685bf-vxgnz
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Mon, 18 Jan 2021 00:00:46 -0500
+Labels:       app=flask
+              pod-template-hash=cdc9685bf
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.2
+IPs:
+  IP:           172.17.0.2
+Controlled By:  ReplicaSet/flask-kubernetes-cluster-cdc9685bf
+Containers:
+  sba-kubernetes-cluster:
+    Container ID:  docker://3980f8736c8bfc33eb292db35aa9c7d80c3a52ace4caaff1804ede97a91cd4c3
+    Image:         annaarakeyan/sba-kubernetes-cluster
+    Image ID:      docker-pullable://annaarakeyan/sba-kubernetes-cluster@sha256:2a09cd45839c45c613971fdc4346482ebcb9284c0246b73b78f32e1cb27d7d81
+    Port:          8080/TCP
+    Host Port:     0/TCP
+    Command:
+      /bin/bash
+      -c
+      --
+    Args:
+      while true; do sleep 30; done;
+    State:          Running
+      Started:      Mon, 18 Jan 2021 00:00:52 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-8j67j (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-8j67j:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-8j67j
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:          <none>
+
+
+Name:         flask-kubernetes-cluster-cdc9685bf-z22rv
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Mon, 18 Jan 2021 00:00:47 -0500
+Labels:       app=flask
+              pod-template-hash=cdc9685bf
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.5
+IPs:
+  IP:           172.17.0.5
+Controlled By:  ReplicaSet/flask-kubernetes-cluster-cdc9685bf
+Containers:
+  sba-kubernetes-cluster:
+    Container ID:  docker://8d155a256c2cb8cb7779190d8d7d033e4d9a1e8cc6b1d96f670511c927755f11
+    Image:         annaarakeyan/sba-kubernetes-cluster
+    Image ID:      docker-pullable://annaarakeyan/sba-kubernetes-cluster@sha256:2a09cd45839c45c613971fdc4346482ebcb9284c0246b73b78f32e1cb27d7d81
+    Port:          8080/TCP
+    Host Port:     0/TCP
+    Command:
+      /bin/bash
+      -c
+      --
+    Args:
+      while true; do sleep 30; done;
+    State:          Running
+      Started:      Mon, 18 Jan 2021 00:00:55 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-8j67j (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-8j67j:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-8j67j
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:          <none>
+NAME                                       READY   STATUS    RESTARTS   AGE
+flask-kubernetes-cluster-cdc9685bf-7xd8h   1/1     Running   0          22h
+flask-kubernetes-cluster-cdc9685bf-vxgnz   1/1     Running   0          22h
+flask-kubernetes-cluster-cdc9685bf-z22rv   1/1     Running   0          22h
+Nodes
+------------------
+Name:               minikube
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=minikube
+                    kubernetes.io/os=linux
+                    minikube.k8s.io/commit=23f40a012abb52eff365ff99a709501a61ac5876
+                    minikube.k8s.io/name=minikube
+                    minikube.k8s.io/updated_at=2021_01_11T11_15_32_0700
+                    minikube.k8s.io/version=v1.15.1
+                    node-role.kubernetes.io/master=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 11 Jan 2021 11:15:28 -0500
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  minikube
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 18 Jan 2021 22:04:23 -0500
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 18 Jan 2021 22:02:20 -0500   Mon, 11 Jan 2021 11:15:22 -0500   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 18 Jan 2021 22:02:20 -0500   Mon, 11 Jan 2021 11:15:22 -0500   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 18 Jan 2021 22:02:20 -0500   Mon, 11 Jan 2021 11:15:22 -0500   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 18 Jan 2021 22:02:20 -0500   Mon, 11 Jan 2021 11:15:29 -0500   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.49.2
+  Hostname:    minikube
+Capacity:
+  cpu:                8
+  ephemeral-storage:  263174212Ki
+  hugepages-2Mi:      0
+  memory:             6405488Ki
+  pods:               110
+Allocatable:
+  cpu:                8
+  ephemeral-storage:  263174212Ki
+  hugepages-2Mi:      0
+  memory:             6405488Ki
+  pods:               110
+System Info:
+  Machine ID:                 2ed25d33f59e46589ad9187f51f7ead7
+  System UUID:                2ed25d33f59e46589ad9187f51f7ead7
+  Boot ID:                    a240fb47-e6ab-42d4-8558-b4017dbd98f4
+  Kernel Version:             4.19.128-microsoft-standard
+  OS Image:                   Ubuntu 20.04.1 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://19.3.13
+  Kubelet Version:            v1.19.4
+  Kube-Proxy Version:         v1.19.4
+Non-terminated Pods:          (12 in total)
+  Namespace                   Name                                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                         ------------  ----------  ---------------  -------------  ---
+  default                     flask-kubernetes-cluster-cdc9685bf-7xd8h     0 (0%)        0 (0%)      0 (0%)           0 (0%)         22h
+  default                     flask-kubernetes-cluster-cdc9685bf-vxgnz     0 (0%)        0 (0%)      0 (0%)           0 (0%)         22h
+  default                     flask-kubernetes-cluster-cdc9685bf-z22rv     0 (0%)        0 (0%)      0 (0%)           0 (0%)         22h
+  kube-system                 coredns-f9fd979d6-2kd76                      100m (1%)     0 (0%)      70Mi (1%)        170Mi (2%)     7d10h
+  kube-system                 etcd-minikube                                0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d10h
+  kube-system                 kube-apiserver-minikube                      250m (3%)     0 (0%)      0 (0%)           0 (0%)         7d10h
+  kube-system                 kube-controller-manager-minikube             200m (2%)     0 (0%)      0 (0%)           0 (0%)         7d10h
+  kube-system                 kube-proxy-nq88p                             0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d10h
+  kube-system                 kube-scheduler-minikube                      100m (1%)     0 (0%)      0 (0%)           0 (0%)         7d10h
+  kube-system                 storage-provisioner                          0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d10h
+  kubernetes-dashboard        dashboard-metrics-scraper-c95fcf479-pwzz8    0 (0%)        0 (0%)      0 (0%)           0 (0%)         29h
+  kubernetes-dashboard        kubernetes-dashboard-584f46694c-f7rpk        0 (0%)        0 (0%)      0 (0%)           0 (0%)         29h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests   Limits
+  --------           --------   ------
+  cpu                650m (8%)  0 (0%)
+  memory             70Mi (1%)  170Mi (2%)
+  ephemeral-storage  0 (0%)     0 (0%)
+  hugepages-2Mi      0 (0%)     0 (0%)
+Events:              <none>
+NAME       STATUS   ROLES    AGE     VERSION
+minikube   Ready    master   7d10h   v1.19.4
+Cluster-info
+------------------
+Kubernetes control plane is running at https://127.0.0.1:49153
+KubeDNS is running at https://127.0.0.1:49153/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
